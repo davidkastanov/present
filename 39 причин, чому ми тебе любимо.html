@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>39 причин, чому ми тебе любимо</title>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Nunito:wght@400;600;700&family=Playfair+Display:ital,wght@0,700;0,900;1,600&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#fbf1f4; --ink:#3b1530; --muted:#7d5a70;
+  --front:#c2185b; --front2:#e0457f; --back:#fff; --back-ink:#3b1530;
+  --gold:#f0a81c; --line:#efd3dd;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#1e0f1d; --ink:#fbe9f0; --muted:#c9a3b8;
+    --front:#d81b60; --front2:#ff5c98; --back:#2e1a2c; --back-ink:#fbe9f0;
+    --gold:#ffc447; --line:#4a2c46; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1e0f1d; --ink:#fbe9f0; --muted:#c9a3b8;
+  --front:#d81b60; --front2:#ff5c98; --back:#2e1a2c; --back-ink:#fbe9f0;
+  --gold:#ffc447; --line:#4a2c46; color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Nunito,system-ui,sans-serif;line-height:1.5;min-height:100vh}
+header{text-align:center;padding:48px 20px 24px;max-width:720px;margin:0 auto}
+.big{font-family:"Playfair Display",Georgia,serif;font-weight:900;font-size:clamp(110px,28vw,220px);line-height:.85;margin:0;color:var(--front);letter-spacing:-.04em}
+h1{font-family:"Playfair Display",Georgia,serif;font-style:italic;font-weight:600;font-size:clamp(24px,5vw,38px);margin:8px 0 12px}
+.hint{color:var(--muted);margin:0 0 20px}
+.progress{max-width:360px;margin:0 auto}
+.bar{height:8px;border-radius:99px;background:var(--line);overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--front),var(--gold));transition:width .4s}
+.count{font-size:14px;color:var(--muted);margin-top:6px;font-weight:600}
+main{max-width:1000px;margin:0 auto;padding:12px 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(112px,1fr));gap:12px}
+.card{perspective:800px;aspect-ratio:1/1.12;background:none;border:0;padding:0;cursor:pointer;font:inherit;color:inherit}
+.inner{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.3,1.3,.5,1)}
+.card.open .inner{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;padding:10px}
+.front{background:linear-gradient(145deg,var(--front),var(--front2));color:#fff;font-family:"Playfair Display",serif;font-weight:900;font-size:clamp(34px,7vw,46px);box-shadow:0 3px 0 rgba(0,0,0,.15)}
+.back{transform:rotateY(180deg);background:var(--back);color:var(--back-ink);border:2px solid var(--gold);font-size:clamp(12.5px,2.9vw,15px);font-weight:600;line-height:1.3}
+.card:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:14px}
+.final{display:none;max-width:620px;margin:0 auto;padding:8px 20px 80px;text-align:center}
+.final.show{display:block;animation:rise .8s ease both}
+.final h2{font-family:"Playfair Display",serif;font-size:clamp(30px,7vw,48px);margin:0 0 12px;color:var(--front)}
+.final p{font-size:18px;margin:0 0 10px}
+.sign{font-family:"Playfair Display",serif;font-style:italic;font-size:22px;margin-top:18px}
+.nextwrap{display:none;text-align:center;padding:8px 20px 56px}
+.nextwrap.show{display:block;animation:rise .8s ease both}
+.next{background:#fff;color:#c2185b;border:0;border-radius:99px;padding:16px 44px;font:700 20px Nunito,system-ui,sans-serif;cursor:pointer;box-shadow:0 4px 18px rgba(194,24,91,.25);transition:transform .15s}
+.next:hover{transform:scale(1.05)}
+.next:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+.nextwrap small{display:block;margin-top:12px;color:var(--muted)}
+.note{display:none;max-width:480px;margin:0 auto;padding:0 20px 90px}
+.note.show{display:block;animation:rise .8s ease both}
+.paper{background:#fffdf5;color:#2b2b6b;font-family:Caveat,"Comic Sans MS",cursive;font-weight:600;font-size:clamp(24px,6vw,30px);line-height:1.3;padding:28px 26px;border-radius:6px;transform:rotate(-1.5deg);box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.paper p{margin:0 0 10px}
+.paper .sig{text-align:right;margin:16px 0 0}
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.inner{transition:none}.final.show{animation:none}}
+</style>
+</head>
+<body>
+<header>
+  <p class="big">39</p>
+  <h1>причин, чому ми тебе любимо</h1>
+  <p class="hint">Відкрий кожну картку — натисни на неї.</p>
+  <div class="progress"><div class="bar"><i id="fill"></i></div><div class="count" id="count">Відкрито 0 з 39</div></div>
+</header>
+<main id="grid"></main>
+<div class="nextwrap" id="nextwrap"><button class="next" id="next">Далі</button><small>Це ще не все...</small></div>
+<section class="final" id="final">
+  <h2>З днем народження, <span id="nm"></span>!</h2>
+  <p>Ти відкрила всі 39 причин, але насправді їх набагато більше. Вони з'являються щодня.</p>
+  <p>Дякуємо, що ти в нас є. Ми дуже тебе любимо.</p>
+  <div class="sign" id="sign"></div>
+</section>
+<div class="nextwrap" id="nextwrap2"><button class="next" id="next2">Далі</button></div>
+<section class="note" id="note"><div class="paper">
+<p>Матусю, з днем наложденя!</p>
+<p>Я тебе дуже сильно люблю. Ти найкласивіша і наймудліша мама на свєті.</p>
+<p>Дякую шо ти мені готуїш смачні котлєтки і чітаєш казки. Я обіцаю слухатьсі і не їсьти цукелки пєлєд обідом (ну майже).</p>
+<p>Хай у тебе будє багато квіточок і толтіка. Цілую тебе міцно-міцно! ♥</p>
+<p class="sig">Твій маленький Артем</p>
+</div></section>
+<canvas id="cv"></canvas>
+<script>
+// ====== ТУТ МІНЯЄМО ТЕКСТИ ======
+var NAME = "матусю";              // як ви звертаєтесь до мами
+var SIGN = "Твій улюблений Давид";   // підпис внизу
+var REASONS = [
+ "Ти обіймаєш так, що всі проблеми зникають.",
+ "Ти завжди віриш у нас, навіть коли ми самі не віримо.",
+ "Твій борщ і взагалі все, що ти готуєш.",
+ "Ти вмієш слухати, не перебиваючи.",
+ "Ти хвилюєшся за нас, навіть коли ми вже дорослі.",
+ "Твій сміх — найзаразливіший у світі.",
+ "Ти знаходиш теплі слова в будь-якій ситуації.",
+ "Ти навчила нас бути добрими.",
+ "Поруч із тобою завжди затишно.",
+ "Ти ніколи не здаєшся.",
+ "Ти пам'ятаєш усі наші дрібниці та важливі дати.",
+ "Ти вмієш перетворити звичайний день на свято.",
+ "Ти завжди готова допомогти, навіть коли сама втомилася.",
+ "Ти найгарніша, і 39 тобі дуже пасує.",
+ "Ти пробачаєш нас швидше, ніж ми встигаємо вибачитися.",
+ "Ти навчила нас говорити правду.",
+ "З тобою можна поговорити про все.",
+ "Ти радієш нашим успіхам як своїм.",
+ "Ти підтримуєш нас у важкі хвилини.",
+ "Твої поради майже завжди виявляються слушними.",
+ "Ти дбаєш про нас щодня.",
+ "Ти вмієш дивувати.",
+ "Твоя усмішка піднімає настрій усім навколо.",
+ "Ти сильна, хоча іноді вдаєш, що ні.",
+ "Удома пахне щастям, коли ти поруч.",
+ "Ти показала нам, що таке справжня любов.",
+ "Ти ніколи не шкодуєш для нас часу.",
+ "У тебе золоті руки.",
+ "Ти вмієш мріяти і нас цього навчила.",
+ "Ти завжди залишаєш нам найсмачніший шматочок.",
+ "Ти наш приклад для наслідування.",
+ "Твій голос заспокоює краще за будь-які ліки.",
+ "Ти помічаєш, що нам сумно, ще до того, як ми скажемо.",
+ "Ти вмієш сміятися з себе.",
+ "Ти робиш нашу сім'ю справжньою сім'єю.",
+ "Ти завжди чекаєш нас удома.",
+ "Ти терпляча, мудра і дуже добра.",
+ "Ти просто найкраща мама.",
+ "Бо ти — це ти, і ми любимо тебе саме такою."
+];
+// =================================
+var grid=document.getElementById('grid'),opened=0,total=REASONS.length;
+document.getElementById('nm').textContent=NAME;
+document.getElementById('sign').textContent=SIGN;
+REASONS.forEach(function(t,i){
+  var b=document.createElement('button');
+  b.className='card';b.setAttribute('aria-label','Причина '+(i+1)+', натисни, щоб відкрити');
+  b.innerHTML='<div class="inner"><div class="face front">'+(i+1)+'</div><div class="face back"></div></div>';
+  b.querySelector('.back').textContent=t;
+  b.addEventListener('click',function(){
+    if(b.classList.contains('open'))return;
+    b.classList.add('open');opened++;update();
+  });
+  grid.appendChild(b);
+});
+function update(){
+  document.getElementById('fill').style.width=(opened/total*100)+'%';
+  document.getElementById('count').textContent='Відкрито '+opened+' з '+total;
+  if(opened===total){
+    var w=document.getElementById('nextwrap');w.classList.add('show');
+    setTimeout(function(){w.scrollIntoView({behavior:'smooth',block:'center'})},500);
+  }
+}
+document.getElementById('next').addEventListener('click',function(){
+  var f=document.getElementById('final');
+  document.getElementById('nextwrap').style.display='none';
+  f.classList.add('show');
+  f.scrollIntoView({behavior:'smooth',block:'center'});
+  confetti();
+  setTimeout(function(){document.getElementById('nextwrap2').classList.add('show')},2500);
+});
+document.getElementById('next2').addEventListener('click',function(){
+  var n=document.getElementById('note');
+  document.getElementById('nextwrap2').style.display='none';
+  n.classList.add('show');
+  n.scrollIntoView({behavior:'smooth',block:'center'});
+});
+function confetti(){
+  var cv=document.getElementById('cv'),c=cv.getContext('2d'),W,H;
+  function rs(){W=cv.width=innerWidth;H=cv.height=innerHeight}rs();addEventListener('resize',rs);
+  var cols=['#c2185b','#ff5c98','#f0a81c','#ffc447','#7e57c2','#26a69a'],ps=[];
+  for(var i=0;i<140;i++)ps.push({x:Math.random()*W,y:-20-Math.random()*H*.6,s:5+Math.random()*7,v:2+Math.random()*3,r:Math.random()*6,w:Math.random()*.2-.1,c:cols[i%cols.length]});
+  var t0=Date.now();
+  (function loop(){
+    c.clearRect(0,0,W,H);
+    ps.forEach(function(p){p.y+=p.v;p.x+=Math.sin(p.y/30);p.r+=p.w;
+      c.save();c.translate(p.x,p.y);c.rotate(p.r);c.fillStyle=p.c;c.fillRect(-p.s/2,-p.s/2,p.s,p.s*.6);c.restore()});
+    if(Date.now()-t0<7000)requestAnimationFrame(loop);else c.clearRect(0,0,W,H);
+  })();
+}
+</script>
+</body>
+</html>
